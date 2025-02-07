@@ -78,6 +78,9 @@ RestrictedContentDL is a Telegram bot script that allows you to download media f
       ```text
       /dl https://t.me/channelname/123
       ```
+      ```text
+      /dl https://t.me/c/2155004811/194
+      ```
 
 ## 🤝 Contributing
 
