@@ -91,7 +91,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 👤 Author
-
+- Name: Bisnu Ray 
+- Telegram: [@TheSmartBisnu](https://t.me/TheSmartBisnu)
 - **Name:** Abir Arafat
 - **GitHub:** [abirxdhack](https://github.com/abirxdhack)
 
