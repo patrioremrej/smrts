@@ -121,8 +121,8 @@ To run the bot, you'll need to configure a few sensitive variables. Here's how t
 
 - To run the bot in the background:
   ```bash
-  screen -S gagan
-  python3 -m devgagan
+  screen -S RestrictDL
+  python3 -m RestrictDL
   ```
   - Detach: `Ctrl + A`, then `Ctrl + D`
   - To stop: `screen -r gagan` and `screen -S gagan -X quit`
