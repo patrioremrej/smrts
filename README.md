@@ -201,7 +201,7 @@ Your credentials can be stolen if pushed to a public repository. Always keep the
 **Note**: Changing the terms and commands doesn't magically make you a developer. Real development involves understanding the code, writing new functionalities, and debugging issues, not just renaming things. If only it were that easy!
 
 ### Special thanks to:
-- [DevGagan](https://github.com/devgagan) For Main Project.
+- [DevGagan](https://github.com/devgaganin) For Main Project.
 - [King of Patal](https://github.com/alreadydea) for base development of this repository.
 - [Mautrix Bridge](https://github.com/mautrix/telegram) for fast uploader connectivity bridge.
 - [Me ](t.me/abirxdhackz) For Just Some Small Fixes And Upload Fix And ParseMode Issue Fix.
