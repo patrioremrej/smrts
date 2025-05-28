@@ -13,7 +13,7 @@ from time import time
 from PIL import Image
 from config import COMMAND_PREFIXES
 from utils import LOGGER
-from core.mongo import get_db
+from core import get_db
 import json
 import subprocess
 
