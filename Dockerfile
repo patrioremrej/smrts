@@ -12,8 +12,5 @@ RUN pip3 install --upgrade pip wheel && \
 WORKDIR /app
 COPY . .
 
-# Optional: expose port if your app needs it
-EXPOSE 8000
-
 # Run your module
 CMD ["python3", "-m", "snigdha"]
