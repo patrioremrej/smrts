@@ -45,7 +45,7 @@ async def check_interval(user_id, freecheck):
         cooldown_end = interval_set[user_id]
         if now < cooldown_end:
             remaining_time = (cooldown_end - now).seconds
-            return False, f"Please wait {remaining_time} seconds(s) before sending another link. Alternatively, purchase premium for instant access.\n\n> Hey 👋 You can use /token to use the bot free for 3 hours without any time limit."
+            return False, f"Please wait {remaining_time} seconds(s) before sending another link. Alternatively, purchase premium for instant access.\n\n> Hey 👋 You can use /token to use the bot fre[...]
         else:
             del interval_set[user_id]  # Cooldown expired, remove user from interval set
 
@@ -212,11 +212,11 @@ async def batch_link(_, message):
         await message.reply(response_message)
         return
         
-    join_button = InlineKeyboardButton("Join Channel", url="https://t.me/TheSmartDev")
+    join_button = InlineKeyboardButton("Join Channel", url="https://t.me/NxMirror")
     keyboard = InlineKeyboardMarkup([[join_button]])
     pin_msg = await app.send_message(
         user_id,
-        f"Batch process started ⚡\nProcessing: 0/{cl}\n\n**Powered by SmartDev**",
+        f"Batch process started ⚡\nProcessing: 0/{cl}\n\n**Powered by NxMirror**",
         reply_markup=keyboard
     )
     await pin_msg.pin(both_sides=True)
@@ -235,14 +235,14 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by SmartDev__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by NxMirror__**",
                         reply_markup=keyboard
                     )
                     normal_links_handled = True
         if normal_links_handled:
             await set_interval(user_id, interval_minutes=300)
             await pin_msg.edit_text(
-                f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by SmartDev__**",
+                f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by NxMirror__**",
                 reply_markup=keyboard
             )
             await app.send_message(message.chat.id, "Batch completed successfully! 🎉")
@@ -261,13 +261,13 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by SmartDev__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by NxMirror__**",
                         reply_markup=keyboard
                     )
 
         await set_interval(user_id, interval_minutes=300)
         await pin_msg.edit_text(
-            f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by SmartDev__**",
+            f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by NxMirror__**",
             reply_markup=keyboard
         )
         await app.send_message(message.chat.id, "Batch completed successfully! 🎉")
