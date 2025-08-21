@@ -29,14 +29,14 @@ async def subscribe(app, message):
         try:
             user = await app.get_chat_member(update_channel, message.from_user.id)
             if user.status == "kicked":
-                await message.reply_text("You are Banned. Contact -- @ISmartCoder")
+                await message.reply_text("You are Banned. Contact -- @NxMirror")
                 return 1
         except UserNotParticipant:
             caption = f"Join our channel to use the bot"
             await message.reply_photo(photo=JOIN_PIC, caption=caption, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"{url}")]]))
             return 1
         except Exception:
-            await message.reply_text("Something Went Wrong. Contact us @ISmartCoder...")
+            await message.reply_text("Something Went Wrong. Contact us @NxMirror...")
             return 1
 
 async def get_seconds(time_string):
@@ -149,7 +149,7 @@ async def userbot_join(userbot, invite_link):
         return "Could not join, try joining manually."
 
 def get_link(string):
-    regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
+    regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“�[...]"
     url = re.findall(regex, string)
     try:
         link = [x[0] for x in url][0]
