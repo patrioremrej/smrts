@@ -85,7 +85,7 @@ async def upload_media(sender, target_chat_id, file, caption, edit, topic_id):
                     reply_to_message_id=topic_id,
                     parse_mode=ParseMode.MARKDOWN,
                     progress=progress_bar,
-                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├───────────────────�[...]
                 )
                 await dm.copy(LOG_GROUP)
                 
@@ -97,7 +97,7 @@ async def upload_media(sender, target_chat_id, file, caption, edit, topic_id):
                     parse_mode=ParseMode.MARKDOWN,
                     progress=progress_bar,
                     reply_to_message_id=topic_id,
-                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├───────────────────�[...]
                 )
                 await dm.copy(LOG_GROUP)
             else:
@@ -109,7 +109,7 @@ async def upload_media(sender, target_chat_id, file, caption, edit, topic_id):
                     reply_to_message_id=topic_id,
                     progress=progress_bar,
                     parse_mode=ParseMode.MARKDOWN,
-                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├───────────────────�[...]
                 )
                 await asyncio.sleep(2)
                 await dm.copy(LOG_GROUP)
@@ -245,7 +245,7 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
             msg,
             file_name=file_name,
             progress=progress_bar,
-            progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────", edit, time.time())
+            progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────",[...]
         )
         
         caption = await get_final_caption(msg, sender)
@@ -418,7 +418,7 @@ async def copy_message_with_chat_id(app, userbot, sender, chat_id, message_id, e
             file = await userbot.download_media(
                 msg,
                 progress=progress_bar,
-                progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────", edit, time.time())
+                progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├────────────────────�[...]
             )
             file = await rename_file(file, sender)
 
@@ -548,7 +548,7 @@ async def send_settings_message(chat_id, user_id):
         [Button.inline("🔑 Session Login", b'addsession'), Button.inline("🚪 Logout", b'logout')],
         [Button.inline("🖼️ Set Thumbnail", b'setthumb'), Button.inline("🗑️ Remove Thumbnail", b'remthumb')],
         [Button.inline("📤 Upload Method", b'uploadmethod')],
-        [Button.url("🚨 Report Errors", "https://t.me/TheSmartDev")]
+        [Button.url("🚨 Report Errors", "https://t.me/NxMirror")]
     ]
 
     await gf.send_file(
@@ -727,7 +727,7 @@ async def handle_large_file(file, sender, edit, caption):
         if freecheck == 1:
             reply_markup = InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/ISmartCoder")]
+                    [InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/NxMirror")]
                 ]
             )
             await app.copy_message(
@@ -926,7 +926,7 @@ async def split_and_upload_file(app, sender, target_chat_id, file_path, caption,
                 caption=part_caption,
                 reply_to_message_id=topic_id,
                 progress=progress_bar,
-                progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├────────────────────��[...]
             )
             await edit.delete()
             os.remove(part_file)
