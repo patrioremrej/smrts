@@ -33,21 +33,23 @@ async def process_and_upload_link(userbot, user_id, msg_id, link, retry_count, m
     finally:
         pass
 
-# Function to check if the user can proceed
 async def check_interval(user_id, freecheck):
-    if freecheck != 1 or await is_user_verified(user_id):  # Premium or owner users can always proceed
+    if freecheck != 1 or await is_user_verified(user_id):
         return True, None
 
     now = datetime.now()
 
-    # Check if the user is on cooldown
     if user_id in interval_set:
         cooldown_end = interval_set[user_id]
         if now < cooldown_end:
             remaining_time = (cooldown_end - now).seconds
-            return False, f"Please wait {remaining_time} seconds(s) before sending another link. Alternatively, purchase premium for instant access.\n\n> Hey 👋 You can use /token to use the bot fre[...]
+            return False, (
+                f"⏳ Please wait {remaining_time} second(s) before sending another link.\n"
+                "💎 Alternatively, purchase premium for instant access.\n\n"
+                "> Hey 👋 You can use /token to use the bot freely without limits."
+            )
         else:
-            del interval_set[user_id]  # Cooldown expired, remove user from interval set
+            del interval_set[user_id]
 
     return True, None
 
