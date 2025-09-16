@@ -7,7 +7,7 @@ from snigdha import app
 from snigdha.core.func import *
 from datetime import datetime, timedelta
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import MONGO_DB, LOG_GROUP
+from config import MONGO_DB
 
 tclient = AsyncIOMotorClient(MONGO_DB)
 tdb = tclient["telegram_bot"]
