@@ -39,10 +39,6 @@ async def token_handler(client, message):
     if len(message.command) <= 1:
         buttons = [
             [
-                InlineKeyboardButton("Update Channel", url="https://t.me/TheSmartDev"),
-                InlineKeyboardButton("Source Repo", url="https://github.com/abirxdhack/RestrictedContentDL")
-            ],
-            [
                 InlineKeyboardButton("Help Menu", b"$starthelpmsg"),
                 InlineKeyboardButton("Close Menu", b"$closeStartmsg")
             ]
@@ -53,7 +49,18 @@ async def token_handler(client, message):
             "**━━━━━━━━━━━━━━━━━━━━━━**\n"
             "**RestrictedDL ⚙️:** The ultimate toolkit on Telegram, offering Downloading Any Type Of Resticted Content From Both Public & Private Source!\n"
             "**━━━━━━━━━━━━━━━━━━━━━━**\n"
-            "**Don't Forget To [Join Here](https://t.me/TheSmartDev) For Updates!**",
+            "**Log Channel (LogGroup) Setup Instructions:**\n\n"
+            "➤ **Add Log Channel:**\n"
+            "`/addlog -100xxxxxxxxx`\n"
+            "Replace `-100xxxxxxxxx` with your group/channel ID.\n\n"
+            "➤ **Remove Log Channel:**\n"
+            "`/dellog`\n"
+            "This will remove the current log channel.\n\n"
+            "➤ **Show Current Log Channel:**\n"
+            "`/logch`\n"
+            "This will display the current log group/channel and its name.\n\n"
+            "Ab kuch bugs Aaye to Exam's ke bas hi fix krunga 🙂\n"
+            "**━━━━━━━━━━━━━━━━━━━━━━**",
             reply_markup=keyboard,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True
@@ -89,7 +96,7 @@ async def token_handler(client, message):
                 disable_web_page_preview=True
             )
             return
-
+            
 @app.on_message(filters.command("token"))
 async def smart_handler(client, message):
     user_id = message.chat.id
