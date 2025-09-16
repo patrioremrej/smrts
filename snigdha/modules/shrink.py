@@ -39,6 +39,10 @@ async def token_handler(client, message):
     if len(message.command) <= 1:
         buttons = [
             [
+                InlineKeyboardButton("A", url="https://t.me/durov"),
+                InlineKeyboardButton("B", url="https://github.com")
+            ],
+            [
                 InlineKeyboardButton("Help Menu", b"$starthelpmsg"),
                 InlineKeyboardButton("Close Menu", b"$closeStartmsg")
             ]
@@ -59,7 +63,7 @@ async def token_handler(client, message):
             "➤ **Show Current Log Channel:**\n"
             "`/logch`\n"
             "This will display the current log group/channel and its name.\n\n"
-            "Ab kuch bugs Aaye to Exam's ke bas hi fix krunga 🙂\n"
+            "__Only error messages.__\n"
             "**━━━━━━━━━━━━━━━━━━━━━━**",
             reply_markup=keyboard,
             parse_mode=ParseMode.MARKDOWN,
