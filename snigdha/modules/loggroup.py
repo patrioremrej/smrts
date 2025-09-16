@@ -21,6 +21,18 @@ async def del_log_group(client, message):
 async def show_log_group(client, message):
     log_group_id = await get_log_group()
     if log_group_id:
-        await message.reply(f"Current log group is: `{log_group_id}`.")
+        try:
+            chat = await client.get_chat(int(log_group_id))
+            title = chat.title if hasattr(chat, "title") else "<No Title>"
+            await message.reply(
+                f"Current log group:\n\n"
+                f"**Title:** {title}\n"
+                f"**ID:** `{log_group_id}`"
+            )
+        except Exception as e:
+            await message.reply(
+                f"Current log group ID: `{log_group_id}`\n\n"
+                f"Could not fetch channel info: `{e}`"
+            )
     else:
         await message.reply("No log group is currently set.")
