@@ -149,10 +149,11 @@ async def userbot_join(userbot, invite_link):
         return "Could not join, try joining manually."
 
 def get_link(string):
-    regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“�[...]"
+    # A simple and robust regex for extracting URLs
+    regex = r'(https?://[^\s]+)'
     url = re.findall(regex, string)
     try:
-        link = [x[0] for x in url][0]
+        link = url[0]
         if link:
             return link
         else:
